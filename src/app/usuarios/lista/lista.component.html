@@ -1,3 +1,26 @@
+@if (loading) {
+
+<div class="alert alert-info" role="alert">
+  <h4 class="alert-heading text-center">Cargando</h4>
+  <div class="text-center">
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+
+  <p class="mb-0"></p>
+</div>
+} @if (error) {
+
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading text-center">Cargando</h4>
+  <pre>
+      {{ error | json }}
+    </pre
+  >
+
+  <p class="mb-0"></p>
+</div>
+} @if (!loading) {
+
 <div class="row row-cols-1 row-cols-md-3 g-4">
   @for (item of users; track $index) {
 
@@ -18,3 +41,4 @@
   </div>
   }
 </div>
+}
